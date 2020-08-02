@@ -18,6 +18,8 @@ MUTE="0"
 TMPDIR="/tmp/kdeconnect_$(whoami)/" # Temporary Directory to dump files in
 LOGFILE="${HOME}/log/mch.log"
 
+mkdir -p $TMPDIR
+
 for i in "$@"
 do
 case $i in 
