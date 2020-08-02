@@ -53,6 +53,5 @@ if [ $SEND -eq "1" ]; then
 	FNAME=$(date +%s) # Unique Name as time in seconds since 1970
 	echo "$OUTPUT" > $TMPDIR$FNAME.txt
 	cat "$TMPDIR$FNAME.txt"
-	ID=$(kdeconnect-cli -a --id-only)
-	kdeconnect-cli -d $ID --share $TMPDIR$FNAME.txt
+	kdeconnect-cli -a --id-only | xargs -I {} kdeconnect-cli -d {} --share $TMPDIR$FNAME.txt
 fi
